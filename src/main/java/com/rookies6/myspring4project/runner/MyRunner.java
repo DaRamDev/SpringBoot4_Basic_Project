@@ -5,6 +5,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
+import java.util.function.Consumer;
+
 @Component
 public class MyRunner implements ApplicationRunner{
 
@@ -14,6 +16,14 @@ public class MyRunner implements ApplicationRunner{
     public void run(ApplicationArguments args)throws Exception{
         System.out.println("에러 호출됨");
         System.out.println("Application Name"+ applicationName);
+
+        args.getOptionNames().forEach(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println("arg name =" + s);
+            }
+        });
+
 
         args.getOptionNames().forEach(name -> System.out.println("name = " + name));
 
