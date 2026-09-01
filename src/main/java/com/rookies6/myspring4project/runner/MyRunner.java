@@ -1,5 +1,6 @@
 package com.rookies6.myspring4project.runner;
 
+import com.rookies6.myspring4project.config.CustomVO;
 import com.rookies6.myspring4project.property.MyBootProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,13 +8,14 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
+import com.rookies6.myspring4project.config.CustomVO;
 
 import java.util.function.Consumer;
 
 @Component
 public class MyRunner implements ApplicationRunner {
     @Value("${spring.application.name}")
-    String applicationName;
+    private String applicationName;
 
     @Value("${myboot.name}")
     private String name;
@@ -26,6 +28,9 @@ public class MyRunner implements ApplicationRunner {
 
     @Autowired
     private MyBootProperties properties;
+
+    @Autowired
+    private CustomVO customVO;
 
 
     @Override
@@ -57,5 +62,11 @@ public class MyRunner implements ApplicationRunner {
 
         System.out.println("MyBootProperties getName() = " + properties.getName());
         System.out.println("MyBootProperties getAge() = " + properties.getAge());
-        System.out.println("MyBootProperties getFullName() = " + properties.getFullName());    }
+        System.out.println("MyBootProperties getFullName() = " + properties.getFullName());
+
+        System.out.println("현재 활성화 되어있는 CustomVO= " + customVO);
+
+
+    }
+
 }
