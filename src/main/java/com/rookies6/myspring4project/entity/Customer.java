@@ -27,4 +27,5 @@ public class Customer {
     @CreationTimestamp
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    private String testName;
 }
