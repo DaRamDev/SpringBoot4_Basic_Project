@@ -61,5 +61,10 @@ class CustomerRepositoryTest {
     void testUpdate() {
         Customer customer = customerRepository.findByCustomerId("A004")
                 .orElseGet(() -> new Customer());
+        //Setter 호출 EntityManager가 Dirty Checking을 한다.
+        customer.setCustomerName("박둘리");
+        Customer updatedCustomer = customerRepository.save(customer);
+        assertThat(updatedCustomer.getCustomerName()).isEqualTo("박둘리");
     }
+
 }
