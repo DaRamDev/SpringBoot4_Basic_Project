@@ -8,8 +8,11 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name ="Users")
 @Getter
 @Setter
+
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
