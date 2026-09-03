@@ -1,4 +1,4 @@
-package com.rookies6.myspring4project.runner;
+package com.rookies6.myspringboot4project.runner;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

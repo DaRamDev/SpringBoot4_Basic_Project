@@ -1,4 +1,4 @@
-package com.rookies6.myspring4project.config;
+package com.rookies6.myspringboot4project.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

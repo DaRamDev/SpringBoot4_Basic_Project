@@ -1,10 +1,9 @@
-package com.rookies6.myspring4project;
+package com.rookies6.myspringboot4project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.thymeleaf.web.IWebApplication;
 
 
 @SpringBootApplication

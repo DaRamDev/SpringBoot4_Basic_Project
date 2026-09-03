@@ -1,7 +1,7 @@
-package com.rookies6.myspring4project.runner;
+package com.rookies6.myspringboot4project.runner;
 
-import com.rookies6.myspring4project.config.CustomVO;
-import com.rookies6.myspring4project.property.MyBootProperties;
+import com.rookies6.myspringboot4project.config.CustomVO;
+import com.rookies6.myspringboot4project.property.MyBootProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

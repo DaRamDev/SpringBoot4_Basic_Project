@@ -1,4 +1,4 @@
-package com.rookies6.myspring4project.property;
+package com.rookies6.myspringboot4project.property;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
-package com.rookies6.myspring4project.repository;
+package com.rookies6.myspringboot4project.repository;
 
-import com.rookies6.myspring4project.entity.User;
+import com.rookies6.myspringboot4project.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
