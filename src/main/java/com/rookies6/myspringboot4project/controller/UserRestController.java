@@ -2,7 +2,6 @@ package com.rookies6.myspringboot4project.controller;
 
 import com.rookies6.myspringboot4project.entity.User;
 import com.rookies6.myspringboot4project.exception.BusinessException;
-import com.rookies6.myspringboot4project.repository.CustomerRepository;
 import com.rookies6.myspringboot4project.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +26,7 @@ public class UserRestController {
 //    }
 
     @PostMapping
-    public User createUser(@RequestBody User userDetail){
+    public User createUser(@RequestBody User userDetail) {
         return userRepository.save(userDetail);
     }
 
@@ -51,13 +50,13 @@ public class UserRestController {
     }
 
     @GetMapping("/{email}/")
-    public User getUserByEmail(@PathVariable String email){
+    public User getUserByEmail(@PathVariable String email) {
         User existUser = getUser(userRepository.findByEmail(email));
         return existUser;
     }
 
     @PatchMapping("/{email}/")
-    public User updateUser(@PathVariable String email,@RequestBody User userDetail) {
+    public User updateUser(@PathVariable String email, @RequestBody User userDetail) {
         User existUser = getUser(userRepository.findByEmail(email));
         //setter method 호출
         existUser.setName(userDetail.getName());
@@ -66,9 +65,14 @@ public class UserRestController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable Long id){
+    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         User existUser = getUser(userRepository.findById(id));
         userRepository.delete(existUser);
         return ResponseEntity.ok("Id = " + id + " User가 삭제 되었습니다.");
+    }
+
+    @GetMapping("/welcome")
+    public String welcome() {
+        return "Welcome this endpoint is not secure";
     }
 }
