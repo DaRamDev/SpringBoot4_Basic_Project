@@ -19,7 +19,6 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> {
@@ -29,7 +28,6 @@ public class SecurityConfig {
                 .formLogin(withDefaults())
                 .build();
     }
-
 
     @Bean
     public PasswordEncoder passwordEncoder() {
