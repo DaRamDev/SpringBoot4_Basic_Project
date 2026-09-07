@@ -1,8 +1,9 @@
 package com.rookies6.myspringboot4project.exception;
 
+import org.springframework.http.HttpStatus;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 
 @Getter
 @RequiredArgsConstructor
@@ -14,6 +15,10 @@ public enum ErrorCode {
 
     // Student specific errors - 학생 관련 특수한 경우
     STUDENT_NUMBER_DUPLICATE("Student already exists with student number: %s", HttpStatus.CONFLICT),
+
+    // StudentDetail specific errors - 학생 상세정보 관련 특수한 경우
+    EMAIL_DUPLICATE("Student detail already exists with email: %s", HttpStatus.CONFLICT),
+    PHONE_NUMBER_DUPLICATE("Student detail already exists with phone number: %s", HttpStatus.CONFLICT),
 
     // Book specific errors - 도서 관련 특수한 경우
     ISBN_DUPLICATE("Book already exists with ISBN: %s", HttpStatus.CONFLICT);
