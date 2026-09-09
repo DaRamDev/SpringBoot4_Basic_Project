@@ -31,3 +31,11 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     List<Student> findAllWithStudentDetail();
 
 }
+
+
+// git remote add origin 토큰+깃허브 주소
+// git remote -v 하는 순간 다 보임
+
+// git remote set-url origin https:깃허브 주소
+
+
